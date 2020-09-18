@@ -1,0 +1,30 @@
+<h1>All burgers</h1>
+
+{{!-- <ul id="myUL">
+  <li>Hit the gym</li>
+  <li class="checked">Pay bills</li>
+  <li>Meet George</li>
+  <li>Buy eggs</li>
+  <li>Read a book</li>
+  <li>Organize office</li>
+</ul> --}}
+<div class="col-container">
+  <ul id="burgerFalseUL">
+    {{#each burgers}}
+    <li>{{id}}. {{burger_name}} 
+      {{!-- <img class="eat" src="./img/eat.svg"> --}}
+      </li> <button class="devour" data-id="{{id}}">Devour It</button>
+    {{/each}}
+  </ul>
+
+  <ul class="col">
+    <li>Testing</li>
+  </ul>
+</div>
+
+<form id="burgerForm">
+   <label for="burgerText">Burger Name</label>
+    {{!-- <textarea id="burgerText" name="burgerText" placeholder="Write something.." style="height:200px"></textarea> --}}
+    <input type="text" name="burgerText" id="burgerText" placeholder="Write here..." required>
+    <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,35 @@
+{
+  "name": "13-Handlebars-Burger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run lint",
+    "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shamik05/burger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shamik05/burger/issues"
+  },
+  "homepage": "https://github.com/shamik05/burger#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}
