@@ -1,24 +1,20 @@
 <h1>All burgers</h1>
 
-{{!-- <ul id="myUL">
-  <li>Hit the gym</li>
-  <li class="checked">Pay bills</li>
-  <li>Meet George</li>
-  <li>Buy eggs</li>
-  <li>Read a book</li>
-  <li>Organize office</li>
-</ul> --}}
 <div class="col-container">
   <ul id="burgerFalseUL">
     {{#each burgers}}
-    <li>{{id}}. {{burger_name}} 
-      {{!-- <img class="eat" src="./img/eat.svg"> --}}
-      </li> <button class="devour" data-id="{{id}}">Devour It</button>
+      {{#unless devoured}}
+        {{> burgerStatus devoured=false}}
+      {{/unless}}
     {{/each}}
   </ul>
 
   <ul class="col">
-    <li>Testing</li>
+    {{#each burgers}}
+      {{#if devoured}}
+        {{> burgerStatus devoured=true}}
+      {{/if}}
+    {{/each}}
   </ul>
 </div>
 

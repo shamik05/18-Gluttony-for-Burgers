@@ -15,7 +15,16 @@ $(() => {
 
   $(".devour").on("click", function(event) {
     event.preventDefault();
-    console.log(this);
-    console.log(event.target);
+    const id = $(this).data("id");
+    const devoured = {
+      devoured: 1,
+    };
+
+    $.ajax(`/api/burgers/${id}`, {
+      type: "PUT",
+      data: devoured,
+    }).then(() => {
+      location.reload();
+    });
   });
 });

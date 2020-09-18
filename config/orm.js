@@ -23,10 +23,10 @@ const orm = {
     }
   },
 
-  updateOne: async (table, values, condition) => {
+  updateOne: async (table, val, condition) => {
     try {
-      const query = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-      return await db.query(query, [table, values, condition]);
+      const query = "UPDATE ?? SET ? WHERE ?";
+      return await db.query(query, [table, val, condition]);
     } catch (error) {
       if (error) throw error;
       return false;

@@ -4,7 +4,7 @@ const orm = require("../config/orm");
 const burger = {
   all: async () => orm.selectAll("burgers"),
   create: async (col, val) => orm.insertOne("burgers", col, val),
-  update: async (col, values, condition) => orm.updateOne("burgers", col, values, condition),
+  update: async (val, condition) => orm.updateOne("burgers", val, condition),
 };
 
 module.exports = burger;
