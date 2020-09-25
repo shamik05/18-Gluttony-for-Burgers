@@ -13,10 +13,10 @@ const orm = {
     }
   },
 
-  insertOne: async (table, col, value) => {
+  insertOne: async (table, col, val) => {
     try {
       const query = "INSERT INTO ??(??) values(?)";
-      return await db.query(query, [table, col, value]);
+      return await db.query(query, [table, col, val]);
     } catch (error) {
       if (error) throw error;
       return false;

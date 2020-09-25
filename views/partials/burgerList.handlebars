@@ -1,0 +1,30 @@
+<div id="burgerList" class="container-fluid">
+  <div class="row">
+  <div class="col">
+  <ul class="listUl">
+    <h2 class="listTitle">Uneaten</h2>
+    {{#each burgers}}
+      {{#unless devoured}}
+        <li class="uneatenLi">
+          <span class="uneatenSpan">{{id}}. {{burger_name}}</span>
+          <button type="button" data-id="{{id}}" data-devoured="1" class="btn btn-success btn-lg devour"><i class="fas fa-utensils"></i> Devour</i> </button>
+        </li>
+      {{/unless}}
+    {{/each}}
+  </ul>
+  </div>
+  <div class="col">
+  <ul class="listUl">
+    <h2 class="listTitle">Eaten</h2>
+    {{#each burgers}}
+      {{#if devoured}}
+        <li class="eatenLi">
+          <span class="eatenSpan">{{id}}. {{burger_name}}</span>
+          <button type="button" data-id="{{id}}" data-devoured="0" class="btn btn-danger btn-lg undevour">Un-devour <i class="fas fa-undo"></i></button>
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+  </div>
+  </div>
+</div>
