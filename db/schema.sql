@@ -23,7 +23,6 @@ CREATE TABLE items (
 
 CREATE TABLE customburgers (
   id INTEGER AUTO_INCREMENT NOT NULL,
-  custom_name VARCHAR(100) NOT NULL,
   item_id INTEGER NULL,
   burger_id INTEGER NULL,
   FOREIGN KEY (item_id) REFERENCES items(id) ON DELETE SET NULL,

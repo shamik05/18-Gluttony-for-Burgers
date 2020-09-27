@@ -1,4 +1,19 @@
 $(() => {
+  const burger = {
+    meat: [],
+    veggies: [],
+    cheese: [],
+    dressing: [],
+  };
+
+  const adjustBurger = (event) => {
+    const { checked, id } = event.target;
+    const { type } = event.target.dataset;
+    checked ? burger[type].push(id) : burger[type].splice((burger[type].indexOf(id)), 1);
+    burger[type].sort();
+    console.log(burger[type]);
+  };
+
   $("#burgerForm").on("submit", (event) => {
     event.preventDefault();
     const newBurger = {
@@ -16,10 +31,12 @@ $(() => {
   });
 
   $("#burgerCustom").on("click", (event) => {
-    console.log("test");
+    console.log($("#baconCheck"));
+    console.log($("#beefCheck").prop("checked"));
     event.preventDefault();
-    location.assign("/customize");
   });
+
+  $("input[type='checkbox']").on("click", adjustBurger);
 
   // eslint-disable-next-line func-names
   $(".devour, .undevour").on("click", function (event) {
@@ -29,7 +46,6 @@ $(() => {
     const devoured = {
       devoured: status,
     };
-    console.log(devoured);
     $.ajax(`/api/burgers/${id}`, {
       type: "PUT",
       data: devoured,

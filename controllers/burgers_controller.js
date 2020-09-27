@@ -11,7 +11,16 @@ router.get("/", (req, res) => {
 });
 
 router.get("/customize", (req, res) => {
-  res.render("customize");
+  burger.ingredients().then((result) => {
+    // console.log(result);
+    const meat = result.filter((element) => element.item_type === "meat");
+    const veggies = result.filter((element) => element.item_type === "veggies");
+    const cheese = result.filter((element) => element.item_type === "cheese");
+    const dressing = result.filter((element) => element.item_type === "dressing");
+    res.render("customize", {
+      meat, veggies, cheese, dressing,
+    });
+  });
 });
 
 router.get("/items", (req, res) => {

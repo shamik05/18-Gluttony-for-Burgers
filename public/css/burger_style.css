@@ -164,6 +164,42 @@ label {
   transform: translateY(4px);
 }
 
+/* Customize Page */
+.customList {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: none;
+}
+
+.customCol {
+  background: khaki;
+  border-radius: 20px;
+}
+
+.imgCol {
+  align-items: center;
+}
+
+#customRow {
+  /* background: khaki; */
+  margin-left: 6rem;
+  margin-right: 6rem;
+  /* width: 55rem; */
+  border-radius: 20px;
+}
+
+.itemIMG {
+max-width: inherit;
+/* max-height: inherit; */
+}
+
+.itemsLabel {
+  font-size: 1.5rem;
+}
+
  /* The snackbar - position it at the bottom and in the middle of the screen */
  #snackbar {
   visibility: hidden; /* Hidden by default. Visible on click */
