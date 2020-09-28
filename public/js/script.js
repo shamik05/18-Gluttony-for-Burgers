@@ -6,12 +6,22 @@ $(() => {
     dressing: [],
   };
 
+  const renderBurgerImg = () => {
+    $("img").remove(".imgDel");
+    Object.keys(burger).forEach(
+      (type) => burger[type].forEach(
+        (item) => $("#topbun").after(`<img class="itemIMG imgDel" src="./img/${type}-${item}.png" alt="${item}">`),
+      ),
+    );
+  };
+
   const adjustBurger = (event) => {
     const { checked, id } = event.target;
     const { type } = event.target.dataset;
     checked ? burger[type].push(id) : burger[type].splice((burger[type].indexOf(id)), 1);
     burger[type].sort();
-    console.log(burger[type]);
+    // console.log(burger[type]);
+    renderBurgerImg(burger);
   };
 
   $("#burgerForm").on("submit", (event) => {
