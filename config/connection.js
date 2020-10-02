@@ -5,14 +5,19 @@ const util = require("util");
 // Courtesy of Michał Męciński from https://codeburst.io/node-js-mysql-and-async-await-6fb25b01b628
 // Uses the util module to promisify the mysql module to handle asynchronous behaviour
 function makeDb() {
-  // Set up MySQL connection
-  const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-  });
+  // Set up MySQL connection. Checks if it is running in heroku first
+  let connection;
+  if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+  } else {
+    connection = mysql.createConnection({
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASS,
+      database: process.env.DB_NAME,
+    });
+  }
 
   // Promisifies the query function and returns it
   return {
