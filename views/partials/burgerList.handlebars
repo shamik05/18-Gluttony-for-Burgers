@@ -1,28 +1,33 @@
+{{!-- Shows uneaten and eaten unordered lists --}}
 <div id="burgerList" class="container-fluid">
   <div class="row">
   <div class="col">
   <ul class="listUl">
     <h2 class="listTitle">Uneaten</h2>
-    {{#each burgers}}
-      {{#unless devoured}}
-        <li class="uneatenLi">
+    {{!-- Handlebar helper to show each saved uneaten burger --}}
+    {{#each uneaten}}
+        {{!-- Store burger id and its devour status --}}
+        <li data-id="{{id}}" data-devoured="1" class="uneatenLi">
+          {{!-- Create span element containing burger text that can be clicked on --}}
           <span class="uneatenSpan">{{id}}. {{burger_name}}</span>
-          <button type="button" data-id="{{id}}" data-devoured="1" class="btn btn-success btn-lg devour"><i class="fas fa-utensils"></i> Devour</i> </button>
+          {{!-- Create button to devour the current burger and move it into eaten list--}}
+          <button type="button" class="btn btn-success btn-lg devour"><i class="fas fa-utensils"></i> Devour</i> </button>
         </li>
-      {{/unless}}
     {{/each}}
   </ul>
   </div>
   <div class="col">
   <ul class="listUl">
     <h2 class="listTitle">Eaten</h2>
-    {{#each burgers}}
-      {{#if devoured}}
-        <li class="eatenLi">
+    {{!-- Handlebar helper to show each saved uneaten burger --}}
+    {{#each eaten}}
+        {{!-- Store burger id and its devour status --}}
+        <li data-id="{{id}}" data-devoured="0" class="eatenLi">
+          {{!-- Create span element containing burger text --}}
           <span class="eatenSpan">{{id}}. {{burger_name}}</span>
-          <button type="button" data-id="{{id}}" data-devoured="0" class="btn btn-danger btn-lg undevour">Un-devour <i class="fas fa-undo"></i></button>
+          {{!-- Create button to undevour current burger and move the item to the uneaten list --}}
+          <button type="button"  class="btn btn-danger btn-lg undevour">Un-devour <i class="fas fa-undo"></i></button>
         </li>
-      {{/if}}
     {{/each}}
   </ul>
   </div>

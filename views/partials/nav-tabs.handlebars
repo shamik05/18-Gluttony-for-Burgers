@@ -1,0 +1,26 @@
+{{!-- Standard bootstrap navtab menu to render a checkbox for each ingredient according to its type --}}
+<div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-pane fade show active" id="v-pills-meat" role="tabpanel" aria-labelledby="v-pills-meat-tab">
+    {{#each meat}}   
+      {{> checkbox}}
+    {{/each}}
+  </div>
+
+  <div class="tab-pane fade" id="v-pills-veggies" role="tabpanel" aria-labelledby="v-pills-veggies-tab">
+    {{#each veggies}}   
+      {{> checkbox}}
+    {{/each}}
+  </div>
+
+  <div class="tab-pane fade" id="v-pills-cheese" role="tabpanel" aria-labelledby="v-pills-cheese-tab">
+    {{#each cheese}}
+      {{> checkbox}}
+    {{/each}}
+  </div>
+
+  <div class="tab-pane fade" id="v-pills-dressing" role="tabpanel" aria-labelledby="v-pills-dressing-tab">
+    {{#each dressing}}
+      {{> checkbox}}
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{{!-- Form that handles logic to handle new and updated burgers.  --}}
+<form id="burgerForm" data-new={{new}}>
+  <label for="burgerText">Burger Name 
+    {{!-- Input text that cannot be empty during form submission --}}
+    <input type="text" name="burgerText" id="burgerText" placeholder="Write here..." data-id="{{burgerid}}" value="{{inputName}}" required>
+  </label>
+
+  <input id="burgerSubmit" class="burgerBtn" type="submit" value="{{btnText}}"> 
+</form>
+  

@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 
+/* Root page and background */
 html, body {
   height: 100%;
   margin: 0;
@@ -10,6 +11,7 @@ html, body {
   background: #ffcb6a;
 }
 
+/* Header section */
 header {
   display: flex;
   flex-direction: column;
@@ -18,19 +20,21 @@ header {
   margin-bottom: 3rem;
 }
 
+/* Header a tag containing the burger logo */
 #headerA {
   width: min-content;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Header burger logo */
 #headerImg {
   height: 15rem;
   margin-bottom: 1rem;
 }
 
+/* Uneaten and Eaten list */
 #burgerList {
-  /* margin-bottom: 3rem; */
   padding: 0;
   margin-left: 0;
   margin-right: 0;
@@ -72,6 +76,7 @@ ul li {
   user-select: none;
 }
 
+/* Uneaten list hover */
 ul li span:hover {
   background: rgb(214, 170, 23);
   border-radius: 10px;
@@ -104,10 +109,12 @@ ul li span:hover {
   text-align: left;
 }
 
+/* Uneaten burger name */
 .uneatenSpan {
   padding: 10px;
 }
 
+/* Eaten burger name */
 .eatenSpan {
   padding: 10px;
   text-decoration: line-through;
@@ -118,6 +125,7 @@ label {
   cursor: default;
 }
 
+/* Button to eat or uneat burger */
 .devour, .undevour {
   float: right;
   font-size: 1.5rem;
@@ -128,6 +136,7 @@ label {
   box-shadow: 0 9px #999;
 }
 
+/* Form to submit burger name or updated burger name */
 #burgerForm {
   display: flex;
   flex-direction: column;
@@ -137,10 +146,7 @@ label {
   align-items: center;
 }
 
-#burgerSubmit {
-  /* margin-right: 20px; */
-}
-
+/* FOrm submit button */
 .burgerBtn {
   padding: 15px 25px;
   font-size: 25px;
@@ -164,7 +170,7 @@ label {
   transform: translateY(4px);
 }
 
-/* Customize Page */
+/* ---------------- Customize Page ---------------- */
 .customList {
   margin: 0;
   padding: 0;
@@ -175,33 +181,52 @@ label {
 }
 
 .customCol {
-  background: khaki;
+  padding: 0;
   border-radius: 20px;
 }
 
-.imgCol {
+/* Four ingredient types */
+#ingredientNavTabs {
+  background: khaki;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Image Column to render burger ingredients view */
+#itemsIMG {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  max-height: 550px;
+  overflow-y: scroll;
 }
 
 #customRow {
-  /* background: khaki; */
-  margin-left: 6rem;
-  margin-right: 6rem;
-  /* width: 55rem; */
   border-radius: 20px;
+  margin-left: 5rem;
 }
 
-.itemIMG {
+#customRow1 {
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+
+/* Image of ingredients when checkbox is checked */
+.ingredientImg {
 max-width: inherit;
 /* max-height: inherit; */
 }
 
-.itemsLabel {
+.ingredientsLabel {
   font-size: 1.5rem;
 }
 
- /* The snackbar - position it at the bottom and in the middle of the screen */
- #snackbar {
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar { 
   visibility: hidden; /* Hidden by default. Visible on click */
   min-width: 250px; /* Set a default minimum width */
   margin-left: -125px; /* Divide value of min-width by 2 */

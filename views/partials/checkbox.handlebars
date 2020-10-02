@@ -1,4 +1,7 @@
+{{!-- Handlebar element that creates a checkbox for every available ingredient --}}
 <div class="form-check form-check-inline">
-  <input type="checkbox" class="form-check-input" data-type="{{item_type}}" id="{{item_name}}">
-  <label class="form-check-label itemsLabel" for="{{item_name}}">{{item_name}}</label>
+  {{!-- Create an input element and store the ingredient name, id and run helper function to determine whether it should be checked --}}
+  <input type="checkbox" class="form-check-input" data-type="{{ingredient_type}}" id="{{ingredient_name}}" data-id={{id}} {{check id}}>
+  <label class="form-check-label ingredientsLabel" for="{{ingredient_name}}">{{ingredient_name}}</label>
 </div>
+

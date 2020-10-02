@@ -4,15 +4,14 @@ const util = require("util");
 
 // Courtesy of Michał Męciński from https://codeburst.io/node-js-mysql-and-async-await-6fb25b01b628
 // Uses the util module to promisify the mysql module to handle asynchronous behaviour
-
 function makeDb() {
   // Set up MySQL connection
   const connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "&_Q32y^HuOwp",
-    database: "burgers_db",
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
   });
 
   // Promisifies the query function and returns it
@@ -25,16 +24,22 @@ function makeDb() {
     close() {
       return util.promisify(connection.end).call(connection);
     },
+    // Promisifies the transaction function's beginTransaction
+    beginTransaction() {
+      return util.promisify(connection.beginTransaction)
+        .call(connection);
+    },
+    // Promisifies the transaction function's commit transaction
+    commit() {
+      return util.promisify(connection.commit)
+        .call(connection);
+    },
+    // Promisifies the transaction function's rollback transaction
+    rollback() {
+      return util.promisify(connection.rollback)
+        .call(connection);
+    },
   };
-
-  // Make Connection
-  // connection.connect((err) => {
-  //   if (err) {
-  //     console.log(`error connecting: ${err.stack}`);
-  //     return;
-  //   }
-  //   console.log(`connected as id ${connection.threadId}`);
-  // });
 }
 
 // Export connection for our ORM to use.

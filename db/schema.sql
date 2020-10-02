@@ -1,31 +1,31 @@
--- COMMENT
+-- Create the database
 DROP DATABASE IF EXISTS burgers_db;
 CREATE DATABASE burgers_db;
 
--- COMMENT
 USE burgers_db;
 
--- COMMENT
+-- Creates the burger table with name and devoured status
 CREATE TABLE burgers (
   id INTEGER AUTO_INCREMENT NOT NULL,
   burger_name VARCHAR(100) NOT NULL,
   devoured BOOLEAN DEFAULT false,
-  custom BOOLEAN DEFAULT false,
   PRIMARY KEY (id)
 );
 
-CREATE TABLE items (
+-- Creates the ingredient table with name and one of four types
+CREATE TABLE ingredients (
   id INTEGER AUTO_INCREMENT NOT NULL,
-  item_name VARCHAR(100) NOT NULL,
-  item_type ENUM("bun", "cheese", "dressing", "meat", "veggies") NOT NULL,
+  ingredient_name VARCHAR(100) NOT NULL,
+  ingredient_type ENUM("bun", "cheese", "dressing", "meat", "veggies") NOT NULL,
   PRIMARY KEY (id)
 );
 
-CREATE TABLE customburgers (
+-- Creates burgeritems table to store which ingredients a burger has
+CREATE TABLE burgeritems (
   id INTEGER AUTO_INCREMENT NOT NULL,
-  item_id INTEGER NULL,
+  ingredient_id INTEGER NULL,
   burger_id INTEGER NULL,
-  FOREIGN KEY (item_id) REFERENCES items(id) ON DELETE SET NULL,
-  FOREIGN KEY (burger_id) REFERENCES burgers(id) ON DELETE SET NULL,
+  FOREIGN KEY (ingredient_id) REFERENCES ingredients(id) ON DELETE CASCADE,
+  FOREIGN KEY (burger_id) REFERENCES burgers(id) ON DELETE CASCADE,
   PRIMARY KEY (id)
 )
