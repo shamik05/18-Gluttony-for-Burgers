@@ -1,12 +1,13 @@
 # Gluttony for Burgers
 ![GitHub License](https://img.shields.io/badge/License-None-blue)
 ## Description
-This is a burger logger application which allows one to record their burgers eaten. It has two lists, eaten and uneaten which stores a burger name given by user input. Users are also able to edit their burger name and what ingredients it contains by clicking on the burger name. The ingredients page has four sections - meat, vegetables, cheese and dressing, each with a set amount of items. The page also has an animated model viewer showing the burger's final appearance. The app stores data using MySQL and uses a backend compromised of express, node and a custom orm to handle network requests. The front end is handled using express-handlebars as the template engine. Finally, the app is hosted on heroku ![here]().
+This is a burger logger application which allows one to record their burgers eaten. It has two lists, eaten and uneaten which stores a burger name given by user input. Users are also able to edit their burger name and what ingredients it contains by clicking on the burger name. The ingredients page has four sections - meat, vegetables, cheese and dressing, each with a set amount of items. The page also has an animated model viewer showing the burger's final appearance. The app stores data using MySQL and uses a backend compromised of express, node and a custom orm to handle network requests. The front end is handled using express-handlebars as the template engine. Finally, the app is hosted on heroku [here](https://gluttonyforburgers.herokuapp.com/).
 ## Table of Contents
 * [Installation](#Installation)
 * [Configuration](#Configuration)
 * [Usage](#Usage)
-  * [Main](#Main)
+  * [Logging a burger!](#Logger)
+  * [Customizing a burger!](#Customize)
 * [License](#License)
 * [Contributing](#Contributing)
 * [Tests](#Tests)
@@ -26,8 +27,10 @@ Type the following in any CLI to run the app.
 npm start
 ```
 Each module's functions have also been demo-ed below.
-### Main
-<!-- ![Main](assets/main.gif) -->
+### Logger
+![Main](assets/main.gif)
+### Customize
+![Customize](assets/customize.gif)
 ## License 
 The project is currently licenseless.
 ## Contributing
