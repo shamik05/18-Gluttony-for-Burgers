@@ -1,0 +1,36 @@
+Prevent empty field submission
+add css to list groups 
+add css to form
+snackbar toast
+fontawesome to submit button
+add logic for duplicate burgers
+show count for number of the same burgers eaten
+font family to title
+<a href="https://www.freepik.com/vectors/food">Food vector created by pch.vector - www.freepik.com</a>
+
+Bun
+Whole Wheat
+White
+12 Grain
+
+Meat
+Beef
+Chicken
+Veggie
+
+Veggie
+lettuce
+tomato
+onion
+mushroom
+peper
+pickle
+
+Cheese
+-swiss
+-cheddar
+
+Dressing
+-mayo
+-ketchup
+-mustard
